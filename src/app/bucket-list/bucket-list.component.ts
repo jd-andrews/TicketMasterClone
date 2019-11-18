@@ -12,6 +12,10 @@ export class BucketListComponent implements OnInit {
   favoriteEvents: Event2[] = [];
   constructor(private eventService: EventDataService) {}
 
+  deleteEvent(i: number): void {
+    this.eventService.onDelete(i);
+  }
+
   ngOnInit() {
     ///get favorite events from event service and make them
     ///equal to the favorites array in bucket-list

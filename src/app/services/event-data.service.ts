@@ -10,18 +10,53 @@ const TIME_APPEND = "T00:00:00Z";
 })
 export class EventDataService {
   ///sets up a favorite Events array to be accessed between app components
-  private favoriteEvents: Event2[] = [];
+  eventList: any[] = [];
+  private favoriteEvents: Event2[] = [
+    {
+      name: "example",
+      city: "example",
+      startDate: "example",
+      endDate: "example",
+      favorite: true
+    }
+  ];
   ///getter for array
   getFavEvents(): Event2[] {
     return this.favoriteEvents;
   }
   ///setter for array
   setFavEvents(fav: Event2): void {
-    this.favoriteEvents.push(fav);
+    this.favoriteEvents.forEach(event => {
+      if (event.name === fav.name) {
+        return console.log("works");
+      } else {
+        fav.favorite = true;
+        console.log("or");
+        this.favoriteEvents.push(fav);
+      }
+    });
+
     console.log(this.favoriteEvents);
   }
 
+  ////settter for eventList
+  setEventList(data: any[]): void {
+    this.eventList = data;
+    console.log(this.eventList);
+  }
+
+  ////getter for eventList
+  getEventList(): any[] {
+    console.log("get", this.eventList);
+    return this.eventList;
+  }
+
   constructor(private http: HttpClient) {}
+
+  onDelete(index: number) {
+    this.favoriteEvents.splice(index, 1);
+  }
+
   // receive query topic as parameter
   //getter
   getEvent(
@@ -40,8 +75,8 @@ export class EventDataService {
           apikey: API_KEY,
           keyword: keyword,
           city: city,
-          startdatetime: startDate + TIME_APPEND,
-          enddatetime: endDate + TIME_APPEND,
+          startDateTime: startDate + TIME_APPEND,
+          endDateTime: endDate + TIME_APPEND,
           sort: "date,asc"
         }
       }

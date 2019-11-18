@@ -1,20 +1,6 @@
 <h1>EventList</h1>
 
-<form #searchForm="ngForm" (ngSubmit)="searchEvents(searchForm.value)">
-  <label for="keyword">Keyword</label>
-  <input id="keyword" name="keyword" ngModel />
-
-  <label for="city">City <input id="city" name="city" ngModel/></label>
-  <label for="startDate"
-    >Start Date <input type="date" id="startDate" name="startDate" ngModel
-  /></label>
-  <label for="endDate"
-    >End Date <input type="date" id="endDate" name="endDate" ngModel
-  /></label>
-
-  <button type="submit">Submit</button>
-</form>
-<section *ngFor="let event of events; index as i">
+<section *ngFor="let event of eventList; index as i">
   <h2>{{ event.name }}</h2>
   <p>City: {{ event._embedded.venues[0].city.name }}</p>
   <p>Date: {{ event.dates.start.localDate }}</p>

@@ -3,5 +3,6 @@ export interface Event2 {
   city: string;
   startDate: string;
   endDate: string;
-  description: string;
+  favorite: boolean;
+  // description: string;
 }
