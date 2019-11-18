@@ -1,0 +1,45 @@
+#header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: #438954;
+  height: 150px;
+  width: 100vw;
+}
+input {
+  width: 20%;
+  height: 23px;
+  padding: 10px;
+}
+
+button {
+  padding: 2.8px;
+  height: 47px;
+  box-sizing: border-box;
+  border: 2px solid #daf786;
+  background-color: ghostwhite;
+
+  /* width:  */
+}
+
+#favLink {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+}
+
+a {
+  text-emphasis: none;
+  text-decoration: none;
+}
+
+#startDate,
+#endDate {
+  width: 15%;
+}
+
+.fa-bookmark {
+  font-size: 48px;
+  color: ghostwhite;
+}

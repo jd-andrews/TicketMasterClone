@@ -1,21 +1,29 @@
-<p>search-criteria works!</p>
+<div id="header">
+  <form #searchForm="ngForm" (ngSubmit)="searchEvents(searchForm.value)">
+    <label for="keyword"></label>
+    <input
+      id="keyword"
+      name="keyword"
+      placeholder=" Search Events Here..."
+      ngModel
+      required
+    />
 
-<form #searchForm="ngForm" (ngSubmit)="searchEvents(searchForm.value)">
-  <label for="keyword">Keyword</label>
-  <input id="keyword" name="keyword" ngModel />
+    <label for="city"
+      ><input id="city" name="city" placeholder="City..." ngModel required
+    /></label>
+    <label for="startDate"
+      ><i class="far fa-calendar-alt"></i>
+      <input type="date" id="startDate" name="startDate" ngModel required/>
+      <label for="endDate"></label>
+      <input type="date" id="endDate" name="endDate" ngModel required
+    /></label>
 
-  <label for="city">City <input id="city" name="city" ngModel/></label>
-  <label for="startDate"
-    >Start Date <input type="date" id="startDate" name="startDate" ngModel
-  /></label>
-  <label for="endDate"
-    >End Date <input type="date" id="endDate" name="endDate" ngModel
-  /></label>
-
-  <button type="submit">Submit</button>
-  <a routerLink="/bucket-list">Favorites</a>
-
-  <!-- Potential Link to go back to search page
+    <button [disabled]="searchForm.invalid" type="submit">Submit</button>
+    <div id="favLink">
+      <a routerLink="/bucket-list"><i class="far fa-bookmark"></i></a>
+    </div>
+    <!-- Potential Link to go back to search page
     <a
     [routerLink]="['/event-list']"
     [queryParams]="{
@@ -26,4 +34,5 @@
     }"
     >Back to Search</a
   > -->
-</form>
+  </form>
+</div>
