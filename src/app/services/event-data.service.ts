@@ -25,18 +25,14 @@ export class EventDataService {
   }
   ///setter for array
   setFavEvents(fav: any): void {
-    // this.favoriteEvents.forEach(event => {
-    //   if (event.name === fav.name) {
-    //     return console.log("works");
-    //   } else {
-    //     fav.favorite = true;
-    //     console.log("or");
-    //     this.favoriteEvents.push(fav);
-    //   }
-    // });
+    if (this.favoriteEvents.find(event => fav.id === event.id) === undefined) {
+      console.log("works");
+      this.favoriteEvents.push(fav);
+    } else {
+      console.log("dont");
+    }
+    // this.favoriteEvents.push(fav);
     // console.log(this.favoriteEvents);
-    this.favoriteEvents.push(fav);
-    console.log(this.favoriteEvents);
   }
 
   ////settter for eventList
