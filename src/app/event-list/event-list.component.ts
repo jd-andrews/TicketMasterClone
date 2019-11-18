@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { EventDataService } from "../services/event-data.service";
-import { Event2 } from "src/app/interfaces/event";
+
+import { ActivatedRoute } from "@angular/router";
 
 @Component({
   selector: "app-event-list",
@@ -11,19 +12,14 @@ export class EventListComponent implements OnInit {
   eventList: any[] = [];
   favorite: any[] = [];
 
-  constructor(private eventService: EventDataService) {}
+  constructor(
+    private eventService: EventDataService,
+    private route: ActivatedRoute
+  ) {}
 
-  favoriteEvent(i: number) {
-    let fav: Event2 = {
-      name: this.eventList[i].name,
-      city: this.eventList[i]._embedded.venues[0].city.name,
-      startDate: "i",
-      endDate: "i",
-      favorite: false
-    };
-
+  favoriteEvent(favorite: any) {
     ////Pushes event to service favorites array
-    this.eventService.setFavEvents(fav);
+    this.eventService.setFavEvents(favorite);
 
     ////Pushes event to local favorites array
     // console.log(fav);
@@ -32,6 +28,21 @@ export class EventListComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.eventList = this.eventService.getEventList();
+    this.route.queryParams.subscribe(queryParams => {
+      this.eventService
+        .getEvent(
+          queryParams.keyword,
+          queryParams.city,
+          queryParams.startDate,
+          queryParams.endDate
+        )
+        .subscribe(data => {
+          console.log(data);
+          this.eventService.setEventList(data._embedded.events);
+          this.eventList = data._embedded.events;
+          console.log(this.eventList);
+        });
+      // this.eventList = this.eventService.getEventList();
+    });
   }
 }

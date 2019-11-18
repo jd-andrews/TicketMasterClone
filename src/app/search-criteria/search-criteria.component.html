@@ -1,6 +1,5 @@
 <p>search-criteria works!</p>
-<button type="button" routerLink="/bucket-list">Favorites</button>
-<button type="button" routerLink="/event-list">Back to Search</button>
+
 <form #searchForm="ngForm" (ngSubmit)="searchEvents(searchForm.value)">
   <label for="keyword">Keyword</label>
   <input id="keyword" name="keyword" ngModel />
@@ -14,4 +13,17 @@
   /></label>
 
   <button type="submit">Submit</button>
+  <a routerLink="/bucket-list">Favorites</a>
+
+  <!-- Potential Link to go back to search page
+    <a
+    [routerLink]="['/event-list']"
+    [queryParams]="{
+      keyword: searchForm.keyword,
+      city: searchForm.city,
+      startDate: searchForm.startDate,
+      endDate: searchForm.endDate
+    }"
+    >Back to Search</a
+  > -->
 </form>

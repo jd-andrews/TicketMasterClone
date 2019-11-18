@@ -4,7 +4,7 @@
   <h2>{{ event.name }}</h2>
   <p>City: {{ event._embedded.venues[0].city.name }}</p>
   <p>Date: {{ event.dates.start.localDate }}</p>
-  <button type="button" (click)="favoriteEvent(i)">
+  <button type="button" (click)="favoriteEvent(event)">
     Add to Favorites List
   </button>
 </section>

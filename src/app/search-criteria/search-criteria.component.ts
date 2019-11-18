@@ -1,5 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { EventDataService } from "../services/event-data.service";
+import { Router } from "@angular/router";
+import { Subscription } from "rxjs";
 
 @Component({
   selector: "app-search-criteria",
@@ -9,23 +11,25 @@ import { EventDataService } from "../services/event-data.service";
 export class SearchCriteriaComponent implements OnInit {
   eventList: any[] = [];
 
-  constructor(private eventService: EventDataService) {}
+  constructor(private eventService: EventDataService, private router: Router) {}
 
   searchEvents(searchForm: any) {
-    this.eventService
-      .getEvent(
-        searchForm.keyword,
-        searchForm.city,
-        searchForm.startDate,
-        searchForm.endDate
-      )
-      .subscribe(data => {
-        console.log(data);
-        this.eventService.setEventList(data._embedded.events);
-        this.eventList = data._embedded.events;
-        console.log(this.eventList);
-      });
+    this.router.navigate(["/event-list"], {
+      queryParams: {
+        keyword: searchForm.keyword,
+        city: searchForm.city,
+        startDate: searchForm.startDate,
+        endDate: searchForm.endDate
+      }
+    });
   }
+  // searchForm.keyword,
+  //         searchForm.city,
+  //         searchForm.startDate,
+  //         searchForm.endDate
+
+  ///build route url
+  ///use router to navigate to event-list with url params
 
   ngOnInit() {
     this.eventList = this.eventService.getEventList();

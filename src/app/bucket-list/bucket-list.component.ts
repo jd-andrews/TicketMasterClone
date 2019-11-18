@@ -1,6 +1,5 @@
 import { Component, OnInit } from "@angular/core";
 import { EventDataService } from "../services/event-data.service";
-import { Event2 } from "../interfaces/event";
 
 @Component({
   selector: "app-bucket-list",
@@ -9,7 +8,7 @@ import { Event2 } from "../interfaces/event";
 })
 export class BucketListComponent implements OnInit {
   ///started empty favorites array
-  favoriteEvents: Event2[] = [];
+  favoriteEvents: any[] = [];
   constructor(private eventService: EventDataService) {}
 
   deleteEvent(i: number): void {
