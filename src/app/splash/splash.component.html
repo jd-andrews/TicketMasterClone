@@ -12,8 +12,8 @@
         <p class="eDate">Date: {{ event.dates.start.localDate }}</p>
       </div>
     </div>
-    <a>
-      <i class="favorite far fa-bookmark" (click)="favoriteEvent(event)"></i
+    <a [ngClass]="{ favorited: add[i] }">
+      <i class="favorite far fa-bookmark" (click)="favoriteEvent(event, i)"></i
     ></a>
   </section>
 </div>

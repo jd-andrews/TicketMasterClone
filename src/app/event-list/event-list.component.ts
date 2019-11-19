@@ -75,6 +75,14 @@ export class EventListComponent implements OnInit {
     // console.log(this.favorite);
   }
 
+  toTop() {
+    window.scroll({
+      top: 0,
+      left: 0,
+      behavior: "smooth"
+    });
+  }
+
   ngOnInit() {
     this.route.queryParams.subscribe(queryParams => {
       this.eventService

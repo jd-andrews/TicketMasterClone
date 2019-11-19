@@ -16,9 +16,11 @@
         <p class="eDate">Date: {{ event.dates.start.localDate }}</p>
       </div>
     </div>
-    <a [ngClass]="{ favorited: add[i] }"
-      ><i class="favorite far fa-bookmark" (click)="favoriteEvent(event, i)"></i
-    ></a>
+    <a [ngClass]="{ favorited: add[i] }">
+      <i class="favorite far fa-bookmark" (click)="favoriteEvent(event, i)"></i>
+    </a>
   </section>
-  <div><p>End of Results</p></div>
+  <div>
+    <a id="t0top" (click)="toTop()">Return to Top of Page</a>
+  </div>
 </div>

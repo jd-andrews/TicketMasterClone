@@ -24,18 +24,22 @@ p {
 
 .eName {
   font-size: 18pt;
+  font-weight: 800;
 }
 
 .eCity {
-  font-size: 16pt;
+  font-size: 13pt;
+  color: rgb(39, 46, 39);
 }
 
 .eDate {
-  font-size: 16pt;
+  font-size: 14.5pt;
+  color: rgb(68, 68, 68);
 }
 
 .eContent {
   display: flex;
+  flex-direction: column;
 }
 img {
   width: 150px;
@@ -49,7 +53,7 @@ img {
 section {
   border-bottom: 2px solid black;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
   padding: 20px 0 20px 0;
 }
@@ -65,5 +69,31 @@ i {
 }
 
 .favorited {
-  color: red;
+  color: #900c3f;
+  font-weight: 900;
+}
+
+#t0top {
+  cursor: pointer;
+  color: #438954;
+  font-size: 18pt;
+  padding: 20px 0 40px 0;
+}
+
+#t0top:hover {
+  color: #900c3f;
+  text-decoration: underline;
+}
+
+@media only screen and (min-width: 884px) {
+  section {
+    flex-direction: row;
+  }
+  .eContent {
+    flex-direction: row;
+  }
+
+  #t0top {
+    font-size: 24pt;
+  }
 }

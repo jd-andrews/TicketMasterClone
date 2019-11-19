@@ -22,6 +22,7 @@ p {
 
 .eContent {
   display: flex;
+  flex-direction: column;
 }
 img {
   width: 150px;
@@ -35,7 +36,7 @@ img {
 section {
   border-bottom: 2px solid black;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
   padding: 20px 0 20px 0;
 }
@@ -48,4 +49,17 @@ i {
   width: 70px;
   height: 70px;
   font-size: 24pt;
+}
+
+.favorited {
+  color: #900c3f;
+}
+
+@media only screen and (min-width: 884px) {
+  section {
+    flex-direction: row;
+  }
+  .eContent {
+    flex-direction: row;
+  }
 }

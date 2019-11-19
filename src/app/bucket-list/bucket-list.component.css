@@ -4,6 +4,10 @@
   align-items: center;
 }
 
+#bookmarked {
+  font-size: 33pt;
+}
+
 p {
   margin: 0;
 }
@@ -22,6 +26,7 @@ p {
 
 .eContent {
   display: flex;
+  flex-direction: column;
 }
 img {
   width: 150px;
@@ -49,5 +54,14 @@ i {
   height: 70px;
   font-size: 24pt;
   padding-top: 35px;
-  color: red;
+  color: #ff5733;
+}
+
+@media only screen and (min-width: 884px) {
+  section {
+    flex-direction: row;
+  }
+  .eContent {
+    flex-direction: row;
+  }
 }

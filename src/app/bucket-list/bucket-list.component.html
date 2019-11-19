@@ -1,6 +1,5 @@
-<h2>bucket List</h2>
-
 <div class="container">
+  <p id="bookmarked">Bookmarked Events</p>
   <section *ngFor="let event of favoriteEvents; index as i">
     <div class="eContent">
       <img class="image" src="{{ event.images[0].url }}" />
