@@ -4,6 +4,20 @@
   align-items: center;
 }
 
+.counter {
+  display: flex;
+  flex-direction: row;
+  margin-top: 10px;
+}
+#results {
+  padding: 2px;
+}
+
+#resultNumber {
+  border: 2px solid black;
+  padding: 0 7px 0 7px;
+}
+
 p {
   margin: 0;
 }
@@ -48,4 +62,8 @@ i {
   width: 70px;
   height: 70px;
   font-size: 24pt;
+}
+
+.favorited {
+  color: red;
 }

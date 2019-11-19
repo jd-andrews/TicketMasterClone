@@ -11,16 +11,64 @@ import { ActivatedRoute } from "@angular/router";
 export class EventListComponent implements OnInit {
   eventList: any[] = [];
   favorite: any[] = [];
+  add: boolean[] = [
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false
+  ];
 
   constructor(
     private eventService: EventDataService,
     private route: ActivatedRoute
   ) {}
 
-  favoriteEvent(favorite: any) {
+  favoriteEvent(favorite: any, i: number) {
     ////Pushes event to service favorites array
     this.eventService.setFavEvents(favorite);
-
+    /////Changes local favorite
+    if (this.add[i] === false) {
+      this.add[i] = true;
+    } else {
+      this.add[i] = false;
+    }
     ////Pushes event to local favorites array
     // console.log(fav);
     // this.favorite.push(fav);
@@ -42,8 +90,7 @@ export class EventListComponent implements OnInit {
           this.eventList = data._embedded.events;
           console.log(this.eventList);
         });
-      // this.eventList = this.eventService.getEventList();
     });
+    // this.eventList = this.eventService.getEventList();
   }
 }
-// }

@@ -1,21 +1,24 @@
 <!-- <h1>EventList</h1> -->
 
 <div class="container">
-  <div>
-    <p id="results">Number of Results -</p>
-    <p>{{ eventList.length }}</p>
+  <div class="counter">
+    <p id="results">Number of Results:</p>
+    <p id="resultNumber">{{ eventList.length }}</p>
   </div>
   <section *ngFor="let event of eventList; index as i">
     <div class="eContent">
-      <img class="image" src="{{ event.images[0].url }}" />
+      <div>
+        <img class="image" src="{{ event.images[0].url }}" />
+      </div>
       <div class="eText">
         <p class="eName">{{ event.name }}</p>
         <p class="eCity">City: {{ event._embedded.venues[0].city.name }}</p>
         <p class="eDate">Date: {{ event.dates.start.localDate }}</p>
       </div>
     </div>
-    <a
-      ><i class="favorite far fa-bookmark" (click)="favoriteEvent(event)"></i
+    <a [ngClass]="{ favorited: add[i] }"
+      ><i class="favorite far fa-bookmark" (click)="favoriteEvent(event, i)"></i
     ></a>
   </section>
+  <div><p>End of Results</p></div>
 </div>
