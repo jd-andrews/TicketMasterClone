@@ -1,23 +1,28 @@
 <div id="header">
   <form #searchForm="ngForm" (ngSubmit)="searchEvents(searchForm.value)">
-    <label for="keyword"></label>
-    <input
-      id="keyword"
-      name="keyword"
-      placeholder=" Search Events Here..."
-      ngModel
-      required
-    />
-
-    <label for="city"
-      ><input id="city" name="city" placeholder="City..." ngModel required
-    /></label>
-    <label for="startDate"
-      ><i class="far fa-calendar-alt"></i>
-      <input type="date" id="startDate" name="startDate" ngModel required/>
-      <label for="endDate"></label>
-      <input type="date" id="endDate" name="endDate" ngModel required
-    /></label>
+    <div class="inputItem">
+      <label for="keyword">Event, Artist, Activity...</label>
+      <input
+        id="keyword"
+        name="keyword"
+        placeholder=" Search Events Here..."
+        ngModel
+        required
+      />
+    </div>
+    <div class="inputItem">
+      <label for="city">City:</label>
+      <input id="city" name="city" placeholder="City..." ngModel required />
+    </div>
+    <div class="inputItem">
+      <label for="startDate">From:</label>
+      <!-- <i class="far fa-calendar-alt"></i> -->
+      <input type="date" id="startDate" name="startDate" ngModel />
+    </div>
+    <div class="inputItem">
+      <label for="endDate">To:</label>
+      <input type="date" id="endDate" name="endDate" ngModel />
+    </div>
 
     <button [disabled]="searchForm.invalid" type="submit">Submit</button>
     <div id="favLink">

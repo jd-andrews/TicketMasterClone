@@ -8,22 +8,17 @@ const TIME_APPEND = "T00:00:00Z";
   providedIn: "root"
 })
 export class EventDataService {
-  ///sets up a favorite Events array to be accessed between app components
   eventList: any[] = [];
-  private favoriteEvents: any[] = [
-    // {
-    //   name: "example",
-    //   city: "example",
-    //   startDate: "example",
-    //   endDate: "example",
-    //   favorite: true
-    // }
-  ];
-  ///getter for array
+
+  ///sets up a favorite Events array to be accessed between app components
+  private favoriteEvents: any[] = [];
+
+  ///getter for favorite events array
   getFavEvents(): any[] {
     return this.favoriteEvents;
   }
-  ///setter for array
+
+  ///setter for favorite events array
   setFavEvents(fav: any): void {
     if (this.favoriteEvents.find(event => fav.id === event.id) === undefined) {
       console.log("works");
@@ -31,8 +26,6 @@ export class EventDataService {
     } else {
       console.log("dont");
     }
-    // this.favoriteEvents.push(fav);
-    // console.log(this.favoriteEvents);
   }
 
   ////settter for eventList
@@ -71,6 +64,8 @@ export class EventDataService {
           apikey: API_KEY,
           keyword: keyword,
           city: city,
+          // radius: "400",
+          // unit: "miles",
           startDateTime: startDate + TIME_APPEND,
           endDateTime: endDate + TIME_APPEND,
           sort: "date,asc"
