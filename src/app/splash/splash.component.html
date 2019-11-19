@@ -1,11 +1,16 @@
-<h2>bucket List</h2>
+<section>
+  <p>What's new in town?</p>
+  <p>Use the search fields above to find out what's going near you</p>
+</section>
 
 <div class="container">
-  <section *ngFor="let event of favoriteEvents; index as i">
+  <section *ngFor="let event of eventList; index as i">
     <p class="eName">{{ event.name }}</p>
     <p class="eCity">City: {{ event._embedded.venues[0].city.name }}</p>
     <p class="eDate">Date: {{ event.dates.start.localDate }}</p>
     <img class="image" src="{{ event.images[0].url }}" />
-    <button (click)="deleteEvent(i)" class="del">X</button>
+    <button type="button" (click)="favoriteEvent(event)">
+      Add to Favorites List
+    </button>
   </section>
 </div>

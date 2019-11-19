@@ -8,13 +8,15 @@ import { AppComponent } from "./app.component";
 import { SearchCriteriaComponent } from "./search-criteria/search-criteria.component";
 import { EventListComponent } from "./event-list/event-list.component";
 import { BucketListComponent } from "./bucket-list/bucket-list.component";
+import { SplashComponent } from './splash/splash.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SearchCriteriaComponent,
     EventListComponent,
-    BucketListComponent
+    BucketListComponent,
+    SplashComponent
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],

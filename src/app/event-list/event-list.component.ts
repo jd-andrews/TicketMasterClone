@@ -28,19 +28,6 @@ export class EventListComponent implements OnInit {
   }
 
   ngOnInit() {
-    // if (
-    //   this.route.queryParams.subscribe(queryParams => {
-    //     queryParams.keyword;
-    //   }) === undefined
-    // ) {
-    //   console.log("test");
-    //   this.eventService.getEvent(
-    //     "music",
-    //     "new york",
-    //     "2020/01/01T00:00:01Z",
-    //     "2021/01/01T00:00:01Z"
-    //   );
-    // } else {
     this.route.queryParams.subscribe(queryParams => {
       this.eventService
         .getEvent(

@@ -64,7 +64,7 @@ export class EventDataService {
           apikey: API_KEY,
           keyword: keyword,
           city: city,
-          // radius: "400",
+          radius: "400",
           // unit: "miles",
           startDateTime: startDate + TIME_APPEND,
           endDateTime: endDate + TIME_APPEND,
