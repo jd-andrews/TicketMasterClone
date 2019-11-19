@@ -19,6 +19,35 @@ p {
 .eDate {
   font-size: 16pt;
 }
+
+.eContent {
+  display: flex;
+}
 img {
-  height: 77px;
+  width: 150px;
+  height: auto;
+  max-height: 100px;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 10px;
+}
+section {
+  border-bottom: 2px solid black;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 20px 0 20px 0;
+}
+
+i {
+  cursor: pointer;
+}
+
+.fas {
+  width: 70px;
+  height: 70px;
+  font-size: 24pt;
+  padding-top: 35px;
+  color: red;
 }

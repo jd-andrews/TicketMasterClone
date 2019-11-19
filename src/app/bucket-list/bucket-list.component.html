@@ -2,10 +2,14 @@
 
 <div class="container">
   <section *ngFor="let event of favoriteEvents; index as i">
-    <p class="eName">{{ event.name }}</p>
-    <p class="eCity">City: {{ event._embedded.venues[0].city.name }}</p>
-    <p class="eDate">Date: {{ event.dates.start.localDate }}</p>
-    <img class="image" src="{{ event.images[0].url }}" />
-    <button (click)="deleteEvent(i)" class="del">X</button>
+    <div class="eContent">
+      <img class="image" src="{{ event.images[0].url }}" />
+      <div class="eText">
+        <p class="eName">{{ event.name }}</p>
+        <p class="eCity">City: {{ event._embedded.venues[0].city.name }}</p>
+        <p class="eDate">Date: {{ event.dates.start.localDate }}</p>
+      </div>
+    </div>
+    <i (click)="deleteEvent(i)" class="fas fa-trash"></i>
   </section>
 </div>
