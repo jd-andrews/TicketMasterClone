@@ -13,6 +13,17 @@ p {
   margin: 0;
 }
 
+#p1 {
+  font-size: 18pt;
+  font-style: italic;
+}
+
+#p2,
+#p3 {
+  font-size: 11pt;
+  font-weight: 100;
+}
+
 .eName {
   font-size: 18pt;
 }

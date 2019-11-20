@@ -19,13 +19,15 @@
         <p class="eDate">Date: {{ event.dates.start.localDate }}</p>
       </div>
     </div>
-    <a [ngClass]="{ favorited: add[i] }">
-      <i
-        class="favorite far fa-bookmark"
-        (click)="favoriteEvent(event, i)"
-        title="Bookmark This Event"
-      ></i>
-    </a>
+    <div class="favPos">
+      <a [ngClass]="{ favorited: add[i] }">
+        <i
+          class="favorite far fa-bookmark"
+          (click)="favoriteEvent(event, i)"
+          title="Bookmark This Event"
+        ></i>
+      </a>
+    </div>
   </section>
   <div *ngIf="eventList.length > 4">
     <a id="t0top" (click)="toTop()">Return to Top of Page</a>
