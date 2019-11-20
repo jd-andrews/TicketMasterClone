@@ -14,6 +14,7 @@
   left: 38%;
   width: 150px;
   z-index: 30;
+  cursor: pointer;
 }
 
 form {

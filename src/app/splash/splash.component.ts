@@ -70,7 +70,7 @@ export class SplashComponent implements OnInit {
 
   ngOnInit() {
     this.eventService
-      .getEvent("Hockey", "Detroit", "2020-01-01", "2021-01-01")
+      .getEvent("music", "New York", "2019-12-01", "2019-12-31")
       .subscribe(data => {
         console.log(data);
         this.eventService.setEventList(data._embedded.events);
