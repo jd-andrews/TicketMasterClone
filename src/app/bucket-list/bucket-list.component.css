@@ -48,13 +48,16 @@ section {
 i {
   cursor: pointer;
 }
+i:hover {
+  color: red;
+}
 
 .fas {
   width: 70px;
   height: 70px;
   font-size: 24pt;
   padding-top: 35px;
-  color: #ff5733;
+  color: black;
 }
 
 @media only screen and (min-width: 884px) {

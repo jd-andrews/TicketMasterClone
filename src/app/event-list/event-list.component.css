@@ -68,6 +68,10 @@ i {
   font-size: 24pt;
 }
 
+.favorite:hover {
+  color: red;
+}
+
 .favorited {
   color: #900c3f;
   font-weight: 900;

@@ -8,7 +8,7 @@ const TIME_APPEND = "T00:00:00Z";
   providedIn: "root"
 })
 export class EventDataService {
-  eventList: any[] = [];
+  private eventList: any[] = [];
 
   ///sets up a favorite Events array to be accessed between app components
   private favoriteEvents: any[] = [];

@@ -5,6 +5,9 @@
     <p id="results">Number of Results:</p>
     <p id="resultNumber">{{ eventList.length }}</p>
   </div>
+  <div *ngIf="eventList.length < 1">
+    <p>Your search returned 0 results.</p>
+  </div>
   <section *ngFor="let event of eventList; index as i">
     <div class="eContent">
       <div>

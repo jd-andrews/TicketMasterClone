@@ -1,4 +1,7 @@
 <header id="header">
+  <div>
+    <img id="logo" src="/assets/newintown.png" />
+  </div>
   <form #searchForm="ngForm" (ngSubmit)="searchEvents(searchForm.value)">
     <div class="inputItem">
       <label for="keyword">Event, Artist, Activity...</label>
@@ -25,11 +28,11 @@
     <div class="inputItem date">
       <label for="startDate">From:</label>
       <!-- <i class="far fa-calendar-alt"></i> -->
-      <input type="date" id="startDate" name="startDate" required ngModel />
+      <input type="date" id="startDate" name="startDate" ngModel />
     </div>
     <div class="inputItem date">
       <label for="endDate">To:</label>
-      <input type="date" id="endDate" name="endDate" required ngModel />
+      <input type="date" id="endDate" name="endDate" ngModel />
     </div>
     <div class="inputItem">
       <button [disabled]="searchForm.invalid" type="submit">Find Events</button>
