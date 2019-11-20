@@ -1,14 +1,50 @@
 import { Component, OnInit } from "@angular/core";
 import { EventDataService } from "../services/event-data.service";
 import { Router } from "@angular/router";
+import {
+  transition,
+  trigger,
+  state,
+  style,
+  animate
+} from "@angular/animations";
 
 @Component({
   selector: "app-search-criteria",
   templateUrl: "./search-criteria.component.html",
-  styleUrls: ["./search-criteria.component.css"]
+  styleUrls: ["./search-criteria.component.css"],
+  animations: [
+    trigger("changeFavPos", [
+      state(
+        "initial",
+        style({
+          marginRight: "-200px",
+          zIndex: "0"
+        })
+      ),
+      state(
+        "final",
+        style({
+          marginRight: "50px",
+          zIndex: "0"
+        })
+      ),
+      transition("initial=>final", animate("100ms")),
+      transition("final=>initial", animate("100ms"))
+    ])
+  ]
 })
 export class SearchCriteriaComponent implements OnInit {
   eventList: any[] = [];
+
+  currentState = "initial";
+
+  changeState() {
+    this.currentState = this.currentState === "initial" ? "final" : "initial";
+  }
+  revertState() {
+    this.currentState = this.currentState === "final" ? "initial" : "final";
+  }
 
   constructor(private eventService: EventDataService, private router: Router) {}
 

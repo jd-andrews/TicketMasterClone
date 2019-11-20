@@ -3,6 +3,11 @@
   flex-direction: column;
   align-items: center;
 }
+#splash {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
 p {
   margin: 0;
@@ -34,7 +39,7 @@ img {
   padding: 10px;
 }
 section {
-  border-bottom: 2px solid black;
+  border-bottom: 0.5px solid black;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -46,9 +51,8 @@ i {
 }
 
 .favorite {
-  width: 70px;
-  height: 70px;
   font-size: 24pt;
+  width: 40px;
 }
 
 .favorited {

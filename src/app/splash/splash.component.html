@@ -1,7 +1,11 @@
 <div class="container">
-  <section>
+  <section id="splash">
     <p>What's new in town?</p>
-    <p>Use the search fields above to find out what's going near you</p>
+    <p>
+      We'll show you! Use the search fields above and find out what's going on
+      in your town!
+    </p>
+    <p>Here's a sample of what's happening in New York this month</p>
   </section>
   <section *ngFor="let event of eventList; index as i">
     <div class="eContent">
@@ -13,7 +17,11 @@
       </div>
     </div>
     <a [ngClass]="{ favorited: add[i] }">
-      <i class="favorite far fa-bookmark" (click)="favoriteEvent(event, i)"></i
+      <i
+        class="favorite far fa-bookmark"
+        (click)="favoriteEvent(event, i)"
+        title="Bookmark This Event"
+      ></i
     ></a>
   </section>
 </div>

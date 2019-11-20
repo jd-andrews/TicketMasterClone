@@ -1,5 +1,8 @@
 <div class="container">
   <p id="bookmarked">Bookmarked Events</p>
+  <div *ngIf="favoriteEvents.length === 0">
+    <p>~Your Bookmarks List is Currently Empty~</p>
+  </div>
   <section *ngFor="let event of favoriteEvents; index as i">
     <div class="eContent">
       <img class="image" src="{{ event.images[0].url }}" />
@@ -9,6 +12,10 @@
         <p class="eDate">Date: {{ event.dates.start.localDate }}</p>
       </div>
     </div>
-    <i (click)="deleteEvent(i)" class="fas fa-trash"></i>
+    <i
+      (click)="deleteEvent(i)"
+      class="fas fa-trash"
+      title="Bookmark This Event"
+    ></i>
   </section>
 </div>
