@@ -5,12 +5,15 @@
   height: 600px;
   width: 100%;
 }
-
+.fillWidth {
+  display: none;
+}
 #logo {
   position: absolute;
   top: 22px;
   left: 38%;
   width: 150px;
+  z-index: 30;
 }
 
 form {
@@ -19,6 +22,7 @@ form {
   justify-content: center;
   align-items: center;
   width: 88%;
+  z-index: 6;
 }
 .inputItem {
   display: flex;
@@ -131,5 +135,16 @@ a {
   .fa-bookmark {
     font-size: 48px;
     color: ghostwhite;
+  }
+  .fillWidth {
+    display: flex;
+
+    z-index: 1;
+    position: absolute;
+    width: 100%;
+    overflow: hidden;
+    height: 300px;
+    min-width: 100%;
+    object-fit: cover;
   }
 }
