@@ -3,14 +3,14 @@
   justify-content: center;
   background-image: linear-gradient(-45deg, #4a88ce, #438954);
   height: 600px;
-  width: 100vw;
+  width: 100%;
 }
 
 #logo {
   position: absolute;
-  top: 20px;
-  left: 20px;
-  width: 100px;
+  top: 22px;
+  left: 38%;
+  width: 150px;
 }
 
 form {
@@ -81,12 +81,11 @@ a {
     display: flex;
     justify-content: center;
     height: 300px;
-    width: 100vw;
   }
   #logo {
     top: 20px;
     left: 20px;
-    width: 150px;
+    width: 200px;
   }
 
   form {

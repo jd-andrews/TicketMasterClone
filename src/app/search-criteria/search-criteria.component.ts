@@ -18,13 +18,15 @@ import {
       state(
         "initial",
         style({
-          marginRight: "-200px",
+          opacity: "0",
+          marginRight: "200px",
           zIndex: "0"
         })
       ),
       state(
         "final",
         style({
+          opacity: "1",
           marginRight: "50px",
           zIndex: "0"
         })
