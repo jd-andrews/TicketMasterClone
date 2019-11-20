@@ -6,6 +6,7 @@
 
 #bookmarked {
   font-size: 33pt;
+  border-bottom: black 5px double;
 }
 
 p {
