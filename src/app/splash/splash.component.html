@@ -1,11 +1,11 @@
 <div class="container">
   <section id="splash">
-    <p id="p1">What's new in town?</p>
+    <p id="p1">What's new in town? Maybe you?</p>
     <p id="p2">
-      We'll show you! Use the search fields above and find out what's going on
-      in your town!
+      If you're trying to find out what to do in your town we can help! Use the
+      search fields above and find out what's going on in your town!
     </p>
-    <p id="p3">Here's a sample of what's happening in New York this month</p>
+    <p id="p3">Here's what's happening in New York this month</p>
   </section>
   <section *ngFor="let event of eventList; index as i">
     <div class="eContent">
@@ -24,4 +24,7 @@
       ></i
     ></a>
   </section>
+  <div *ngIf="eventList.length > 4">
+    <a id="t0top" (click)="toTop()">Return to Top of Page</a>
+  </div>
 </div>

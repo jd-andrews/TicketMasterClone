@@ -68,6 +68,14 @@ export class SplashComponent implements OnInit {
   }
   constructor(private eventService: EventDataService) {}
 
+  toTop() {
+    window.scroll({
+      top: 0,
+      left: 0,
+      behavior: "smooth"
+    });
+  }
+
   ngOnInit() {
     this.eventService
       .getEvent("music", "New York", "2019-12-01", "2019-12-31")

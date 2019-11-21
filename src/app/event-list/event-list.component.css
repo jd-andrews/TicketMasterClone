@@ -78,11 +78,11 @@ i {
 }
 
 .favorite:hover {
-  color: red;
+  color: #900c3f;
 }
 
 .favorited {
-  color: #900c3f;
+  color: red;
   font-weight: 900;
 }
 

@@ -57,6 +57,16 @@ button {
   margin-top: 10px;
 }
 
+.alert {
+  color: red;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.694);
+  border: 2px solid red;
+  border-radius: 13px;
+  position: fixed;
+  top: 90px;
+  right: 7%;
+}
 .favLink {
   position: absolute;
   top: 30px;
@@ -139,7 +149,6 @@ a {
   }
   .fillWidth {
     display: flex;
-
     z-index: 1;
     position: absolute;
     width: 100%;

@@ -18,10 +18,19 @@ p {
   font-style: italic;
 }
 
-#p2,
-#p3 {
+#p2 {
   font-size: 11pt;
   font-weight: 100;
+  text-align: center;
+  width: 60%;
+}
+#p3 {
+  font-size: 14pt;
+  font-weight: 100;
+  text-align: center;
+  width: 60%;
+  margin-top: 10px;
+  color: #438954;
 }
 
 .eName {
@@ -67,10 +76,22 @@ i {
 }
 
 .favorited {
-  color: #900c3f;
+  color: red;
 }
 .favorite:hover {
-  color: red;
+  color: #900c3f;
+}
+
+#t0top {
+  cursor: pointer;
+  color: #438954;
+  font-size: 18pt;
+  padding: 20px 0 40px 0;
+}
+
+#t0top:hover {
+  color: #900c3f;
+  text-decoration: underline;
 }
 
 @media only screen and (min-width: 884px) {
@@ -79,5 +100,8 @@ i {
   }
   .eContent {
     flex-direction: row;
+  }
+  #t0top {
+    font-size: 24pt;
   }
 }

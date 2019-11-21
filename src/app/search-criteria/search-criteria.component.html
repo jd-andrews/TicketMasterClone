@@ -17,40 +17,42 @@
   </div>
   <form #searchForm="ngForm" (ngSubmit)="searchEvents(searchForm.value)">
     <div class="inputItem">
-      <label for="keyword">Event, Artist, Activity...</label>
+      <label for="keyword">Type?</label>
       <input
         id="keyword"
         name="keyword"
         title="Search for artist, concert, music, etc."
-        placeholder=" Search Events Here..."
+        placeholder="Event type/artist/whatever"
         ngModel
         required
       />
     </div>
     <div class="inputItem">
-      <label for="city">City:</label>
+      <label for="city">Town?</label>
       <input
         id="city"
         name="city"
         title="Enter City Here"
-        placeholder="City"
+        placeholder="City(no state)"
         ngModel
         required
       />
     </div>
     <div class="inputItem date">
-      <label for="startDate">From:</label>
+      <label for="startDate">From when?</label>
       <!-- <i class="far fa-calendar-alt"></i> -->
-      <input type="date" id="startDate" name="startDate" ngModel />
+      <input type="date" id="startDate" name="startDate" ngModel required />
     </div>
     <div class="inputItem date">
-      <label for="endDate">To:</label>
-      <input type="date" id="endDate" name="endDate" ngModel />
+      <label for="endDate">To when?</label>
+      <input type="date" id="endDate" name="endDate" ngModel required />
     </div>
     <div class="inputItem">
       <button [disabled]="searchForm.invalid" type="submit">Find Events</button>
     </div>
-
+    <div *ngIf="searchForm.invalid && searchForm.dirty">
+      <div class="alert">Please fill out all fields</div>
+    </div>
     <div>
       <i
         (mouseenter)="changeState()"

@@ -75,6 +75,7 @@ export class EventListComponent implements OnInit {
     // console.log(this.favorite);
   }
 
+  //Scroll to top of screen
   toTop() {
     window.scroll({
       top: 0,
