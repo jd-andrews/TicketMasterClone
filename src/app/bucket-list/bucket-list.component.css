@@ -29,6 +29,18 @@ p {
   display: flex;
   flex-direction: column;
 }
+
+.moreDetails {
+  text-decoration: none;
+  cursor: pointer;
+  color: #438954;
+}
+
+.moreDetails:hover {
+  color: #900c3f;
+  text-decoration: underline;
+}
+
 img {
   width: 150px;
   height: auto;

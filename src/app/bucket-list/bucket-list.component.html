@@ -8,6 +8,7 @@
       <img class="image" src="{{ event.images[0].url }}" />
       <div class="eText">
         <p class="eName">{{ event.name }}</p>
+        <p><a class="moreDetails" href="{{ event.url }}">More Details</a></p>
         <p class="eCity">City: {{ event._embedded.venues[0].city.name }}</p>
         <p class="eDate">Date: {{ event.dates.start.localDate }}</p>
       </div>
